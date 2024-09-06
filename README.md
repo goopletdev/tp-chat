@@ -10,10 +10,9 @@ If a message is in toki pona, and all proper names are capitalized and conform t
 <img src="./readme-images/example1.png" alt="proper names and cartouches" width=200/>
 <img src="./readme-images/example2.png" alt="emotes" width=200/>
 <img src="./readme-images/example4.png" alt="sitelen pona example from an actual stream" width=200/>
-<img src="./readme-images/example3.png" alt="BattsGo" width=200/>
+<img src="./readme-images/example3.png" alt="Kabina Font formatting" width=200/>
 
-If a Twitch user named specifically BattsGo sends a message in your chat, it will display in [Kabina Font](https://www.fontspace.com/kabina-font-f22386) which looks like a child's handwriting, because I thought this was funny.
-...I might change this in the future.
+If a specified Twitch user sends a message in your chat, it will display in [Kabina Font](https://www.fontspace.com/kabina-font-f22386) which looks like a child's handwriting, because I thought this was funny. To specify a user, add  `&troll=[UserName]` to the end of the URL detailed in the section ["Adding the overlay to your stream"](https://github.com/gooplet0075/tp-chat/tree/main?tab=readme-ov-file#adding-the-overlay-to-your-stream)
 ### Badges
 Currently, the most common global badges are supported - broadcaster, moderator, and VIP. I hope to add account connections, which will allow for custom channel badges, as well as full access to all global badges. 
 ### Emotes
@@ -41,6 +40,7 @@ Thanks also to the many Discordians who pointed me in the right direction when I
 is-toki-pona.js was generously contributed by [m4ym4y](https://github.com/m4ym4y) since I was clueless about regex.
 This project uses the [lipu-linku](https://github.com/lipu-linku/sona) dataset.
 The fonts used are [nasin-nanpa](https://github.com/ETBCOR/nasin-nanpa) and [glametrix](https://www.fontspace.com/glametrix-font-f16913).
+This project uses [ComfyJS](https://github.com/instafluff/ComfyJS) to integrate with the Twitch API. 
 ### Bonus
 Here are some pictures of my cats Denna and Kvothe as well as Henry the skull
 
