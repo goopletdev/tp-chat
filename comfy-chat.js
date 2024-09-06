@@ -40,6 +40,7 @@ var badges = { //badges require OAUTH. for now, i'm hard-coding in a list of glo
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const channel = urlParams.get('channel');
+var troll = urlParams.get('troll');
 
 ComfyJS.onChat = async (user, message, flags, self, extra) => {
   var newMessage = document.createElement('li');
@@ -116,8 +117,8 @@ ComfyJS.onChat = async (user, message, flags, self, extra) => {
   } else {
     // message does not conform to toki pona standards set in isTokiPona()
     // apply no special toki pona formatting
-    if (user === 'BattsGo') {
-      text.className = 'batts';
+    if (user === troll) {
+      text.className = 'troll';
     }
     text.innerHTML = message;
   }
