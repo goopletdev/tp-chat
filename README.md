@@ -29,7 +29,7 @@ I'm just kinda assuming that messages caught by automod won't show up in this ch
 - BTTV & FFZ emotes
 ## Adding the overlay to your stream
 In OBS, click the "+" button on the Sources panel and select "browser" to add a browser source. In the pop-up window, paste this url:
-`https://[PlaceholderURL]?channel=[YourChannelHere]`, replacing [YourChannelHere] with your channel name, and removing the brackets. Set the width and heigh to whatever you want; I've found that 337x600 is a good size. Leave the rest of the settings as they are. You're all set! Messages sent to your chat will immediately start showing up in the chat box, even if you aren't live.
+`https://gooplet0075.github.io/tp-chat/?channel=[YourChannelHere]`, replacing [YourChannelHere] with your channel name, and removing the brackets. Set the width and heigh to whatever you want; I've found that 337x600 is a good size. Leave the rest of the settings as they are. You're all set! Messages sent to your chat will immediately start showing up in the chat box, even if you aren't live.
 
 <img src="./readme-images/obs1.png" alt="add source" width="250"/>
 <img src="./readme-images/obs2.png" alt="browser source" width="250"/>
@@ -43,6 +43,7 @@ This project uses the [lipu-linku](https://github.com/lipu-linku/sona) dataset.
 The fonts used are [nasin-nanpa](https://github.com/ETBCOR/nasin-nanpa) and [glametrix](https://www.fontspace.com/glametrix-font-f16913).
 ### Bonus
 Here are some pictures of my cats Denna and Kvothe as well as Henry the skull
+
 <img src="./readme-images/cats1.png" alt="Denna and Kvothe waiting to be fed" width="200"/>
 <img src="./readme-images/cats2.png" alt="Denna and Kvothe cuddlinngggg" width="300"/>
 <img src="./readme-images/henry1.png" alt="Henry" width="180"/>
