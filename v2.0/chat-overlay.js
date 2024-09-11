@@ -8,9 +8,9 @@ var badges;
 if (twitchChannel) {
     // create twitch chat badges object from twitchChannel name, if channel name is listed
     var badges = globalBadges;
-    if (twitchChannel && (twitchChannel in customBadges)) {
-    badges.bits = customBadges[twitchChannel].bits;
-    badges.subscriber = customBadges[twitchChannel].bits;
+    if (twitchChannel in customBadges) {
+      badges.bits = customBadges[twitchChannel].bits;
+      badges.subscriber = customBadges[twitchChannel].subscriber;
     };
 };
 
@@ -18,14 +18,23 @@ var youtubeChannel = urlParams.get('youtubeChannel');
 var youtubeChannelId = urlParams.get('youtubeChannelId');
 var youtubeVideoId = urlParams.get('youtubeVideoId');
 var youtubeChatId = urlParams.get('youtubeChatId');
-//var gapiKey = urlParams.get('gapiKey');
-var gapiKey = urlParams.get('key');
+var gapiKey = urlParams.get('gapiKey');
+console.log('gapiKey = ',gapiKey);
+if (gapiKey) {
+    gapiKey = '&key=' + gapiKey;
+    gapiURL = 'https://youtube.googleapis.com/youtube/v3/';
+} else { // the keyless version currently appears to not be working
+    gapiKey = ''
+    gapiURL = 'https://yt.lemnoslife.com/noKey/';
+}
 
-var youtubeModeratorColor = urlParams.get('youtubeModeratorColor');
-var youtubeOwnerColor = urlParams.get('youtubeOwnerColor');
-var youtubeSponsorColor = urlParams.get('youtubeSponsorColor');
-var youtubeVerifiedColor = urlParams.get('youtubeVerifiedColor');
-var youtubeDefaultColor = urlParams.get('youtubeDefaultColor');
+/* //try implementing color options later
+var youtubeModeratorColor = urlParams.get('youtubeModeratorColor') || '#5e84f1';
+var youtubeOwnerColor = urlParams.get('youtubeOwnerColor') || '#ffca28';
+var youtubeSponsorColor = urlParams.get('youtubeSponsorColor') || '#2ba640';
+var youtubeVerifiedColor = urlParams.get('youtubeVerifiedColor') || #58acf2';
+var youtubeDefaultColor = urlParams.get('youtubeDefaultColor') || '#b7b7b7';
+*/
 
 var youtubeRoleColors = {
   'chatModerator':'#5e84f1',
@@ -33,14 +42,6 @@ var youtubeRoleColors = {
   'chatSponsor':'#2ba640',
   'verified':'#58acf2',
   'default':'#b7b7b7'
-}
-console.log('key = ',gapiKey);
-if (gapiKey) {
-    gapiKey = '&key=' + gapiKey;
-    gapiURL = 'https://youtube.googleapis.com/youtube/v3/';
-} else {
-    gapiKey = ''
-    gapiURL = 'https://yt.lemnoslife.com/noKey/';
 }
 
 var youtubeChat = [];
@@ -324,7 +325,7 @@ ComfyJS.onChat = async (user, message, flags, self, extra) => {
   
   // check if message is toki pona using messageCopy
   var isTokiPonaMessage = await isTokiPona(messageCopy);
-  console.log('isTokiPonaMessage: ' + isTokiPonaMessage[0])
+  //console.log('isTokiPonaMessage: ' + isTokiPonaMessage[0])
   
   // split message into segments for different formatting, if message is in toki pona 
   if (isTokiPonaMessage[0] && messageCopy === messageCopy.toLowerCase()) {
@@ -358,14 +359,17 @@ ComfyJS.onChat = async (user, message, flags, self, extra) => {
 
   var userBadges = '';
   for (badge in extra['userBadges']) {
+    //console.log('badge: ', badge);
     if (badge in badges) {
+      //console.log('badge in global var badges. ');
       var badgeID = extra['userBadges'][badge];
+      //console.log('badgeID: ', badgeID);
       if (badgeID in badges[badge]) {
+        //console.log('badgeID in global var badges[badge]');
         userBadges += `<img src="${badges[badge][badgeID]}">`;   
       }
     }
   }
-
   newMessage.innerHTML = `<span style="color:${extra.userColor}">${userBadges + user + ':'}</span>`;
   newMessage.append(text);
   chat.append(newMessage);
