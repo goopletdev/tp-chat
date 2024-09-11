@@ -1,0 +1,81 @@
+
+@font-face {
+  font-family: nasin-nanpa;
+  src: url(../fonts/nasin-nanpa-3.1.0.otf);
+}
+
+@font-face {
+  font-family: glametrix;
+  src: url(../fonts/glametrix-font/Glametrix-oj9A.otf);
+}
+
+@font-face{
+  font-family: kabina;
+  src: url(../fonts/kabina-font/KabinaBold-0Bwo.otf);
+}
+
+html,body {
+  margin: 0;
+  font-family: glametrix;
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+}
+
+img {
+  vertical-align: middle;
+}
+
+#chat {
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+blockquote {
+  display: inline-flex;
+  margin: 5px;
+}
+
+#chat li {
+  background-color: rgba(0, 0, 0, 0.75);
+  box-sizing: border-box;
+  padding: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.troll {
+  font-family: kabina;
+  font-size: 22px;
+}
+
+.tokipona {
+  font-family: nasin-nanpa;
+  font-size: 24px;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.propernoun {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+#chat ul {
+  list-style-type: none;
+  list-style-position: outside;
+  padding: 0;
+  margin: 0;
+}
+
+#chat blockquote {
+  font-size: 28px;
+  display: inline-block;
+  font-weight: normal;
+}
+
+#chat::-webkit-scrollbar {
+  display: none;
+}
