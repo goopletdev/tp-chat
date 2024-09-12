@@ -25,9 +25,8 @@ I'm just kinda assuming that messages caught by automod won't show up in this ch
 ### To-Do List
 - Include full list of global Twitch badges
 - YouTube channel emotes
-- YouTube account connection, to get around API quota
+- OAuth 2.0 implicit grant flow for both YouTube and Twitch
 - Find a better way to handle YouTube deleted messages
-- Implement "implicit grant flow" OAuth authorization to connect a Twitch account, in order to gain access to custom badges?
 - Add support for "v" formatting of "ni", as well as other nasin-nanpa features
 - Add customization options for fonts and background color
 - BTTV & FFZ emotes
