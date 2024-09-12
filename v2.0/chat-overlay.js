@@ -14,6 +14,10 @@ if (twitchChannel) {
     };
 };
 
+var youtubeDelayMultiplier = Number(urlParams.get('youtubeDelayMultiplier') || '1');
+if (youtubeDelayMultiplier < 1) {
+  youtubeDelayMultiplier = 1;
+}
 var youtubeChannel = urlParams.get('youtubeChannel');
 var youtubeChannelId = urlParams.get('youtubeChannelId');
 var youtubeVideoId = urlParams.get('youtubeVideoId');
@@ -233,8 +237,8 @@ async function youtubeChatListener() {
     j = 0;
     var ignoreList = [];
     while (i) {
-        console.log(`listener loop# ${i}; pollingIntervalMillis: ${interval}; seconds: ${interval/1000}; pageToken: ${pageToken}`)
-        await new Promise(r => setTimeout(r, interval));
+        console.log(`listener loop# ${i}; pollingIntervalMillis: ${interval}; seconds: ${(interval/1000)*youtubeDelayMultiplier}; pageToken: ${pageToken}`)
+        await new Promise(r => setTimeout(r, (interval*youtubeDelayMultiplier)));
         response = await getYoutubeChat(pageToken);
         //console.log(response);
         pushYoutubeChat(response.messages);

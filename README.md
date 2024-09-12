@@ -54,11 +54,19 @@ Return to the Credentials page, and click on your API key to edit it. You can na
 Your API key should be active. Copy it, and follow the Twitch instructions for incorporating it as a browser source in OBS, but with the following link instead: `https://gooplet0075.github.io/tp-chat/v2.0/?gapiKey=[YourAPIKeyHere]&youtubeChannel=[YourChannelHere]`. 
 
 ### Limitations
-There are some serious issues with this solution. Namely, your api key has a daily quota of 10,000, and over the course of about an hour and a half, you will hit it. This solution will not work for longer streams. 
+There are some serious issues with this solution. First, chat will not update in real-time; the api calls happen on average every 2 seconds. 
+
+More significantly, however, your api key has a daily quota of 10,000, and over the course of about an hour and a half, you will hit it. This solution will not work for longer streams. 
+
+You can add `&youtubeDelayMultiplier=[NUMBER]` to change the delay between API calls. For example, setting [NUMBER] to 2 will approximately double the length of your stream, but chat will only update every 4 seconds instead of every 2 seconds. 
+
 You can avoid making some of the more costly api calls by replacing the `&youtubeChannel=[YourChannelHere]` query parameter with `&youtubeVideoId=[VideoID]`, where VideoID is your broadcast's ID, which can generally be found at the end of your stream's web address. 
+
 <img src="./readme-images/gapi4.png" alt="youtube video id">
 
-In this example, the video ID is "cLnjClVh3c8". Occasionally, you will be able to omit the API key altogether, and it may still work, because it defaults to using [this keyless api thing, idk how it works](https://yt.lemnoslife.com/), but it's very unreliable. 
+In this example, the video ID is "cLnjClVh3c8". 
+
+Occasionally, you will be able to omit the API key altogether, and it may still work, because it defaults to using [this keyless api thing, idk how it works](https://yt.lemnoslife.com/), but it's very unreliable. 
 ## Credit where credit's due
 I want to credit the lovely jan Jesika with helping me get started on this project, and for helping me problem-solve throughout the whole process! 
 Thanks also to the many Discordians who pointed me in the right direction when I got stuck. 
