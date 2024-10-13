@@ -1,3 +1,4 @@
+**UPDATE:** web address has changed!! Make sure you have the correct one by checking below
 **UPDATE:** support for YouTube added!!!
 
 # Toki Pona Twitch chat overlay
@@ -16,7 +17,7 @@ If a message is in toki pona, and all proper names are capitalized and conform t
 
 If a specified Twitch user sends a message in your chat, it will display in [Kabina Font](https://www.fontspace.com/kabina-font-f22386) which looks like a child's handwriting, because I thought this was funny. To specify a user, add  `&troll=[UserName]` to the end of the URL detailed in the section ["Adding the overlay to your stream"](https://github.com/gooplet0075/tp-chat/tree/main?tab=readme-ov-file#adding-the-overlay-to-your-stream)
 ### Badges
-Currently, the most common global badges are supported - broadcaster, moderator, and VIP. To avoid needing OAuth, I'm doing a jank workaround of manually adding all custom channel badges to [badges.js](https://github.com/gooplet0075/tp-chat/blob/main/v2.0/badges.js). If you want your badges added, contact me or make a pull request. Eventually I'll add account connections, which will allow automation of all badge thingymajigs. 
+Currently, the most common global badges are supported - broadcaster, moderator, and VIP. To avoid needing OAuth, I'm doing a jank workaround of manually adding all custom channel badges to [badges.js](https://github.com/goopletdev/tp-chat/blob/main/v2.0/badges.js). If you want your badges added, contact me or make a pull request. Eventually I'll add account connections, which will allow automation of all badge thingymajigs. 
 ### Emotes
 All official Twitch emotes and custom channel emotes are supported. FrankerFaceZ and BetterTTV emotes? Mayyyybeee after all the other items on my to-do list are checked off. Global YouTube emotes are available as well.
 ### Moderation
@@ -32,7 +33,7 @@ I'm just kinda assuming that messages caught by automod won't show up in this ch
 - BTTV & FFZ emotes
 ## Adding the overlay to your Twitch stream
 In OBS, click the "+" button on the Sources panel and select "browser" to add a browser source. In the pop-up window, paste this url:
-`https://gooplet0075.github.io/tp-chat/v2.0/?twitchChannel=[YourChannelHere]`, replacing [YourChannelHere] with your channel name, and removing the brackets. Set the width and heigh to whatever you want; I've found that 337x600 is a good size. Leave the rest of the settings as they are. You're all set! Messages sent to your chat will immediately start showing up in the chat box, even if you aren't live.
+`https://goopletdev.github.io/tp-chat/v2.0/?twitchChannel=[YourChannelHere]`, replacing [YourChannelHere] with your channel name, and removing the brackets. Set the width and heigh to whatever you want; I've found that 337x600 is a good size. Leave the rest of the settings as they are. You're all set! Messages sent to your chat will immediately start showing up in the chat box, even if you aren't live.
 
 <img src="./readme-images/obs1.png" alt="add source" width="250"/>
 <img src="./readme-images/obs2.png" alt="browser source" width="250"/>
@@ -50,7 +51,7 @@ Return to the Credentials page, and click on your API key to edit it. You can na
 
 <img src="./readme-images/gapi3.png" alt="API restrictions">
 
-Your API key should be active. Copy it, and follow the Twitch instructions for incorporating it as a browser source in OBS, but with the following link instead: `https://gooplet0075.github.io/tp-chat/v2.0/?gapiKey=[YourAPIKeyHere]&youtubeChannel=[YourChannelHere]`. 
+Your API key should be active. Copy it, and follow the Twitch instructions for incorporating it as a browser source in OBS, but with the following link instead: `https://goopletdev.github.io/tp-chat/v2.0/?gapiKey=[YourAPIKeyHere]&youtubeChannel=[YourChannelHere]`. 
 
 ### Limitations
 There are some serious issues with this solution. First, chat will not update in real-time; the api calls happen on average every 2 seconds. 
